@@ -2,11 +2,7 @@ version: 0.2
 
 env:
   variables:
-<<<<<<< HEAD
     _PROJECT_NAME: "confirms"
-=======
-    _PROJECT_NAME: "confirm"
->>>>>>> cd4eb706daa4740397e401a2ac4c1d12b860e70d
     _ECR_NAME: "user11" 
     _NAMESPACE: "user11" 
     _AWS_REGION: "ap-southeast-1"
@@ -22,7 +18,8 @@ phases:
       - echo $_PROJECT_NAME
       - echo $AWS_ACCOUNT_ID
       - echo $_AWS_REGION
-      - echo latest
+      # - echo latest
+      - echo $CODEBUILD_RESOLVED_SOURCE_VERSION
       - echo start command
       - $(aws ecr get-login --no-include-email --region $_AWS_REGION)
   build:
